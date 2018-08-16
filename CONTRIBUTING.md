@@ -1,0 +1,1 @@
+This repository is not open for external contributions. If you have a suggestion that pertains exclusively to this repository, you can open a new issue to discuss it. If you have a suggestion or a pull request that pertains to the art, please direct it to their relevant author.
