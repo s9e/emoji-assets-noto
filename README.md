@@ -1,6 +1,6 @@
 This repository provides a copy of the Noto Emoji image set, optimized for the web.
 
-<img width="40" height="40" src="https://cdn.jsdelivr.net/gh/s9e/emoji-assets-noto@11.0/dist/svgz/1f929.svgz">
+<img width="40" height="40" src="https://cdn.jsdelivr.net/gh/s9e/emoji-assets-noto/dist/svgz/1f929.svgz">
 
 
 ## How to build
