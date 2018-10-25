@@ -20,9 +20,6 @@ function optimize($svg)
 	$svg = str_replace(' xmlns:xlink="http://www.w3.org/1999/xlink"', '', $svg);
 	$svg = str_replace(' overflow="visible"',                         '', $svg);
 
-	// https://github.com/svg/svgo/issues/842
-	$svg = preg_replace('(a[0-9]{12,} [0-9]{12,})', 'a0 0', $svg);
-
 	// Fold a shape used in a clipPath into the clipPath itself
 	$svg = preg_replace(
 		'(<defs>(<[a-z]+) id="([a-z]+)"([^>]*/>)</defs>(<clipPath id="[a-z]+">)<use xlink:href="#\\2"/>(</clipPath>))',
