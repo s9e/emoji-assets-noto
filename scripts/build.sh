@@ -117,7 +117,7 @@ do
 done
 
 echo "[5/8] Running SVGO..."
-third_party/node_modules/.bin/svgo -f "$TRG_DIR/svg" --multipass -q
+third_party/node_modules/.bin/svgo -f "$TRG_DIR/svg" --multipass -q --enable=removeOffCanvasPaths
 
 echo "[6/8] Applying additional optimizations..."
 php scripts/optimize_svgs.php "$TRG_DIR/svg"
