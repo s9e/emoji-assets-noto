@@ -2,6 +2,6 @@
 	path = third_party/behdad/region-flags
 	url = https://github.com/behdad/region-flags.git
 	branch = gh-pages
-[submodule "third_party/googlei18n/noto-emoji"]
-	path = third_party/googlei18n/noto-emoji
-	url = https://github.com/googlei18n/noto-emoji.git
+[submodule "third_party/googlefonts/noto-emoji"]
+	path = third_party/googlefonts/noto-emoji
+	url = https://github.com/googlefonts/noto-emoji.git
