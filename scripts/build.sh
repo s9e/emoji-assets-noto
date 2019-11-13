@@ -1,6 +1,6 @@
 #/bin/bash
 
-SRC_EMOJI_DIR="third_party/googlei18n/noto-emoji"
+SRC_EMOJI_DIR="third_party/googlefonts/noto-emoji"
 SRC_FLAGS_DIR="third_party/behdad/region-flags"
 TRG_DIR="dist"
 
