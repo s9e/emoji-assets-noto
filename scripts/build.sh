@@ -81,14 +81,14 @@ function translate_ris_sub {
 	echo "1f3f4${str}-e007f";
 }
 
-echo "[0/8] Cleaning dirs..."
+echo "[0/9] Cleaning dirs..."
 rm -rf "${TRG_DIR}/svg" "${TRG_DIR}/svgz"
 mkdir "${TRG_DIR}/svg" "${TRG_DIR}/svgz"
 
-echo "[1/8] Copying text files..."
+echo "[1/9] Copying text files..."
 cp "$SRC_EMOJI_DIR/AUTHORS" "$SRC_EMOJI_DIR/LICENSE" "$TRG_DIR"
 
-echo "[2/8] Copying flags..."
+echo "[2/9] Copying flags..."
 for src_file in "$SRC_FLAGS_DIR/svg/"*.svg;
 do
 	basename="$(basename $src_file)"
@@ -105,10 +105,10 @@ do
 	cp "$src_file" "$trg_file"
 done
 
-echo "[3/8] Clipping flags..."
+echo "[3/9] Clipping flags..."
 php scripts/clip_flags.php "$TRG_DIR/svg"
 
-echo "[4/8] Copying emoji..."
+echo "[4/9] Copying emoji..."
 for src_file in "$SRC_EMOJI_DIR/svg/"*.svg;
 do
 	trg_file="$TRG_DIR/svg/$(normalize $(basename $src_file))"
@@ -116,13 +116,16 @@ do
 	cp -f "$src_file" "$trg_file"
 done
 
-echo "[5/8] Running SVGO..."
-third_party/node_modules/.bin/svgo -f "$TRG_DIR/svg" --multipass -q --enable=removeOffCanvasPaths
+echo "[5/9] Removing off-canvas paths..."
+third_party/node_modules/.bin/svgo -f "$TRG_DIR/svg" -q --disable=mergePaths --enable=removeOffCanvasPaths
 
-echo "[6/8] Applying additional optimizations..."
+echo "[6/9] Running SVGO..."
+third_party/node_modules/.bin/svgo -f "$TRG_DIR/svg" --multipass -q
+
+echo "[7/9] Applying additional optimizations..."
 php scripts/optimize_svgs.php "$TRG_DIR/svg"
 
-echo "[7/8] Creating SVGZ..."
+echo "[8/9] Creating SVGZ..."
 zopfli -i100 "$TRG_DIR/svg/"*.svg
 for src_file in "$TRG_DIR/svg/"*.gz;
 do
@@ -132,7 +135,7 @@ do
 	mv "$src_file" "$trg_file"
 done
 
-echo "[8/8] Adding aliases..."
+echo "[9/9] Adding aliases..."
 while read line
 do
 	line="${line%%#*}"
