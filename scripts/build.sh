@@ -117,7 +117,7 @@ do
 done
 
 echo "[5/9] Removing off-canvas paths..."
-third_party/node_modules/.bin/svgo -f "$TRG_DIR/svg" -q --disable=mergePaths --enable=removeOffCanvasPaths
+third_party/node_modules/.bin/svgo -f "$TRG_DIR/svg" --multipass -q --disable={mergePaths,removeViewBox} --enable=removeOffCanvasPaths
 
 echo "[6/9] Running SVGO..."
 third_party/node_modules/.bin/svgo -f "$TRG_DIR/svg" --multipass -q
