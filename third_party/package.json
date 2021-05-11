@@ -1,5 +1,5 @@
 {
   "dependencies": {
-    "svgo": "^2.0.1"
+    "svgo": "^2.3.0"
   }
 }
