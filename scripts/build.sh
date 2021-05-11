@@ -116,8 +116,8 @@ do
 	cp -f "$src_file" "$trg_file"
 done
 
-echo "[5/9] Removing off-canvas paths... [skipped]"
-#third_party/node_modules/.bin/svgo -f "$TRG_DIR/svg" --multipass -q --config scripts/svgo.config.removeoffcanvas.js
+echo "[5/9] Removing off-canvas paths..."
+third_party/node_modules/.bin/svgo -f "$TRG_DIR/svg" -q --config scripts/svgo.removeoffcanvaspaths.js
 
 echo "[6/9] Running SVGO..."
 third_party/node_modules/.bin/svgo -f "$TRG_DIR/svg" --multipass -q
