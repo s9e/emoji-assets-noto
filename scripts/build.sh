@@ -1,7 +1,7 @@
 #/bin/bash
 
 SRC_EMOJI_DIR="third_party/googlefonts/noto-emoji"
-SRC_FLAGS_DIR="third_party/behdad/region-flags"
+SRC_FLAGS_DIR="third_party/fonttools/region-flags"
 TRG_DIR="dist"
 
 cd "$(dirname $(dirname $0))"
