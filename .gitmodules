@@ -1,6 +1,6 @@
-[submodule "third_party/behdad/region-flags"]
-	path = third_party/behdad/region-flags
-	url = https://github.com/behdad/region-flags.git
+[submodule "third_party/fonttools/region-flags"]
+	path = third_party/fonttools/region-flags
+	url = https://github.com/fonttools/region-flags.git
 	branch = gh-pages
 [submodule "third_party/googlefonts/noto-emoji"]
 	path = third_party/googlefonts/noto-emoji
